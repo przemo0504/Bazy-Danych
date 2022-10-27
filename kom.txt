@@ -1,0 +1,297 @@
+login as: markowskip
+markowskip@213.184.8.36's password:
+Linux bad2 4.10.17-1-pve #1 SMP PVE 4.10.17-16 (Tue, 11 Jul 2017 09:55:44 +0200)                                                                                                                                   x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+markowskip@bad2:~$ passwd
+Changing password for markowskip.
+(current) UNIX password:
+Enter new UNIX password:
+Retype new UNIX password:
+You must choose a longer password
+Enter new UNIX password:
+Retype new UNIX password:
+passwd: password updated successfully
+markowskip@bad2:~$ mysql -u login -p
+Enter password:
+ERROR 1045 (28000): Access denied for user 'login'@'localhost' (using password:                                                                                                                                   YES)
+markowskip@bad2:~$ mysql -u login -p
+Enter password:
+ERROR 1045 (28000): Access denied for user 'login'@'localhost' (using password:                                                                                                                                   YES)
+markowskip@bad2:~$ mysql -u login -p
+Enter password:
+ERROR 1045 (28000): Access denied for user 'login'@'localhost' (using password:                                                                                                                                   YES)
+markowskip@bad2:~$ mysql -u login -p
+Enter password:
+ERROR 1045 (28000): Access denied for user 'login'@'localhost' (using password:                                                                                                                                   YES)
+markowskip@bad2:~$ mysql -u markowskip  -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 2711
+Server version: 8.0.22 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE TABLE postac(id_postaci int PRIMARY KEY mysql> CREATE TABLE postac                                                                                                                                  (id_postaci int PRIMARY KEY
+    ->
+    ->
+    ->
+    ->
+[1]+  Stopped                 mysql -u markowskip -p
+markowskip@bad2:~$ use markowskip
+-bash: use: command not found
+markowskip@bad2:~$ CREATE TABLE postac(id_postaci int PRIMARY KEY AUTO INCREMENT;
+-bash: syntax error near unexpected token `('
+markowskip@bad2:~$ CREATE TABLE postac(id_postaci int PRIMARY KEY AUTO INCREMENT;
+-bash: syntax error near unexpected token `('
+markowskip@bad2:~$
+markowskip@bad2:~$ CREATE TABLE postac(id_postaci int PRIMARY KEY AUTO INCREMENT, nazwa varchar(40), rodzaj enum, data_ur date, wiek tinyint)
+-bash: syntax error near unexpected token `('
+markowskip@bad2:~$ CREATE TABLE postac (id_postaci int PRIMARY KEY AUTO INCREMENT, nazwa varchar(40), rodzaj enum, data_ur date, wiek tinyint)
+-bash: syntax error near unexpected token `('
+markowskip@bad2:~$ CREATE TABLE postac ('id_postaci' int PRIMARY KEY AUTO INCREMENT,'nazwa' varchar(40), 'rodzaj' enum, 'data_ur' date, 'wiek' tinyint)
+-bash: syntax error near unexpected token `('
+markowskip@bad2:~$ CREATE TABLE postac 'id_postaci' int PRIMARY KEY AUTO INCREMENT,'nazwa' varchar(40), 'rodzaj' enum, 'data_ur' date, 'wiek' tinyint
+-bash: syntax error near unexpected token `('
+markowskip@bad2:~$ CREATE TABLE postac ('id_postaci' int PRIMARY KEY AUTO INCREMENT,'nazwa' VARCHAR(40), 'rodzaj' ENUM, 'data_ur' DATE, 'wiek' TINYINT)
+-bash: syntax error near unexpected token `('
+markowskip@bad2:~$ CREATE TABLE postac ('id_postaci' int PRIMARY KEY AUTO INCREMENT,'nazwa' VARCHAR(40), 'rodzaj' ENUM, 'data_ur' DATE, 'wiek' TINYINT);
+-bash: syntax error near unexpected token `('
+markowskip@bad2:~$ CREATE TABLE postac ('id_postaci' int PRIMARY KEY AUTO INCREMENT,'nazwa' VARCHAR(40), 'rodzaj' ENUM, 'data_ur' DATE, 'wiek' TINYINT);
+-bash: syntax error near unexpected token `('
+markowskip@bad2:~$ CREATE TABLE postac (id_postaci int PRIMARY KEY AUTO_INCREMENT, nazwa  VARCHAR(40), rodzaj ENUM, data_ur DATE, wiek TINYINT)
+-bash: syntax error near unexpected token `('
+markowskip@bad2:~$ CREATE TABLE postac;
+-bash: CREATE: command not found
+markowskip@bad2:~$ use markowski
+-bash: use: command not found
+markowskip@bad2:~$ USE markowski
+-bash: USE: command not found
+markowskip@bad2:~$ USE markowski;
+-bash: USE: command not found
+markowskip@bad2:~$ USE markowskip;
+-bash: USE: command not found
+markowskip@bad2:~$ USE markowskip
+-bash: USE: command not found
+markowskip@bad2:~$ mysql -u markowskip  -p
+Enter password:
+ERROR 1045 (28000): Access denied for user 'markowskip'@'localhost' (using password: YES)
+markowskip@bad2:~$ mysql -u markowskip  -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 2746
+Server version: 8.0.22 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use markowskip
+Database changed
+mysql> CREATE TABLE postac(id_postaci INT PRIMARY KEY AUTO_INCREMENT, nazwa VARCHAR(40), rodzaj ENUM, data_ur DATE, wiek TINYINT;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', data_ur DATE, wiek TINYINT' at line 1
+mysql> CREATE TABLE postac('id_postaci' INT PRIMARY KEY AUTO_INCREMENT, 'n , data_ur DATE, wiek TINYINT;
+[2]+  Stopped                 mysql -u markowskip -p
+markowskip@bad2:~$ mysql -u markowskip  -p
+Enter password:
+ERROR 1045 (28000): Access denied for user 'markowskip'@'localhost' (using password: YES)
+markowskip@bad2:~$ mysql -u markowskip  -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 2749
+Server version: 8.0.22 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE TABLE postac(id_postaci INT PRIMARY KEY AUTO_INCREMENT, nazwa VARCHAR(40), rodzaj ENUM("wiking", "ptak", "kobieta"), data_ur DATE, wiek TINYINT;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> CREATE TABLE postac(id_postaci) INT PRIMARY KEY AUTO_INCREMENT, nazwa VARCHAR(40), rodzaj ENUM("wiking", "ptak", "kobieta"), data_ur DATE, wiek TINYINT;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') INT PRIMARY KEY AUTO_INCREMENT, nazwa VARCHAR(       40), rodzaj ENUM("wiking", "ptak' at line 1
+mysql> CREATE TABLE postac(id_postaci INT PRIMARY KEY AUTO_INCREMENT, nazwa VARCHAR(40), rodzaj ENUM("wiking", "ptak", "kobieta"), data_ur DATE, wiek TINYINT);
+ERROR 1046 (3D000): No database selected
+mysql> use markowskip
+Database changed
+mysql> CREATE TABLE postac(id_postaci INT PRIMARY KEY AUTO_INCREMENT, nazwa VARCHAR(40), rodzaj ENUM("wiking", "ptak", "kobieta"), data_ur DATE, wiek TINYINT);
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> INSERT INTO postac VALUES (1, "Bjorn", "wiking", "1950-04-19", "72"), (2, "Drozd", "ptak", "2021-07-12", "1"), (3, "Tesciowa", "kobieta", "1918-11-11", "104");
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> UPDATE postac SET wiek = '88'  WHERE id_postaci = 3;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> CREATE TABLE walizka(id_walizki INT PRIMARY KEY AUTO_INCREMENT, pojemnosc TINYINT, typ ENUM("rozowy", "czerwony", "teczowy", "zolty"), id_wlasciciela FOREIGN KEY REFERENCES 'id_postaci' ON DELETE        mysql> CREATE TABLE walizka(id_walizki INT PRIMARY KEY AUTO_INCREMENT, pojemnosc INT  UNSIGNED, typ ENUM("rozowy", "czerwony", "teczowy", "zolty"), id_wlasciciela FOREIGN KEY REFERENCES 'id_postaci' ON DELETE C
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FOREIGN KEY REFERENCES 'id_postaci' ON DELETE CASCADE'
+mysql> CREATE TABLE walizka(id_walizki INT PRIMARY KEY AUTO_INCREMENT, pojemnosc INT  UNSIGNED, typ ENUM("rozowy", "czerwony", "teczowy", "zolty"), id_wlasciciela INT,  FOREIGN KEY (id_wlasciciela)   REFERENCESETE CASCADE;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> CREATE TABLE walizka(id_walizki INT PRIMARY KEY AUTO_INCREMENT, pojemnosc INT  UNSIGNED, typ ENUM("rozowy", "czerwony", "teczowy", "zolty"), id_wlasciciela INT,  FOREIGN KEY (id_wlasciciela) REFERENCES p CASCADE;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> CREATE TABLE walizka(id_walizki INT PRIMARY KEY AUTO_INCREMENT, pojemnosc INT  UNSIGNED, typ ENUM("rozowy", "czerwony", "teczowy", "zolty"), id_wlasciciela FOREIGN KEY REFERENCES 'id_postaci' ON DELETE C
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FOREIGN KEY REFERENCES 'id_postaci' ON DELETE CASCADE)'
+mysql> CREATE TABLE walizka(id_walizki INT PRIMARY KEY AUTO_INCREMENT, pojemnosc INT  UNSIGNED, typ ENUM("rozowy", "czerwony", "teczowy", "zolty"), id_wlasciciela INT,  FOREIGN KEY (id_wlasciciela) REFERENCES p CASCADE);
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> ALTER TABLE walizka CHANGE typ kolor ENUM ("rozowy", "czerwony", "teczowy", "zolty");
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE walizka ALTER kolor SET DEFAULT 'rozowy';
+Query OK, 0 rows affected (0.15 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO walizka VALUES(1, "40", "rozowy", "1"), (2, "60", "rozowy", "3")
+    -> INSERT INTO walizka VALUES(1, "40", "rozowy", "1"), (2, "60", "rozowy", "3")
+    -> INSERT INTO walizka VALUES(1, "40", "rozowy", "1"), (2, "60", "rozowy", "3")
+[3]+  Stopped                 mysql -u markowskip -p
+markowskip@bad2:~$ mysql -u markowskip  -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 2754
+Server version: 8.0.22 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> INSERT INTO walizka VALUES(1, "40", "rozowy", "1"), (2, "60", "rozowy", "3")
+    ->
+[4]+  Stopped                 mysql -u markowskip -p
+markowskip@bad2:~$ mysql -u markowskip  -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 2755
+Server version: 8.0.22 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> INSERT INTO walizka VALUES(1, "40", "rozowy", "1"), (2, "60", "rozowy", "3");
+ERROR 1046 (3D000): No database selected
+mysql> use markowskip
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> INSERT INTO walizka VALUES(1, "40", "rozowy", "1"), (2, "60", "rozowy", "3");
+Query OK, 2 rows affected (0.00 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> CREATE TABLE izba (adres_budynku varchar(40), nazwa_izby varchar(40), metraz UNSIGNED, wlasciciel INT  NULL, PRIMARY KEY (adres_budynku, nazwa_izby), FOREIGN KEY (wlasciciel) REFERENCES postac(id_postaci
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNSIGNED, wlasciciel INT  NULL, PRIMARY KEY (adres_budyat line 1
+mysql> CREATE TABLE izba (adres_budynku varchar(40), nazwa_izby varchar(40), metraz UNSIGNED, wlasciciel INT NULL, PRIMARY KEY (adres_budynku, nazwa_izby), FOREIGN KEY(wlasciciel) REFERENCES postac(id_postaci))
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNSIGNED, wlasciciel INT NULL, PRIMARY KEY (adres_budynat line 1
+mysql> CREATE TABLE izba(adres_budynku varchar(40), nazwa_izby varchar(40), metraz UNSIGNED, wlasciciel INT NULL, PRIMARY KEY (adres_budynku, nazwa_izby), FOREIGN KEY(wlasciciel) REFERENCES postac(id_postaci));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNSIGNED, wlasciciel INT NULL, PRIMARY KEY (adres_budynat line 1
+mysql> CREATE TABLE izba(adres_budynku varchar(40), nazwa_izby varchar(40), metraz UNSIGNED, wlasciciel INT, PRIMARY KEY (adres_budynku, nazwa_izby), FOREIGN KEY(wlasciciel) REFERENCES postac(id_postaci));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNSIGNED, wlasciciel INT, PRIMARY KEY (adres_budynku, nat line 1
+mysql> CREATE TABLE izba(adres_budynku varchar(40), nazwa_izby varchar(40), metraz UNSIGNED, wlasciciel INT, PRIMARY KEY(adres_budynku, nazwa_izby), FOREIGN KEY(wlasciciel) REFERENCES postac(id_postaci));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNSIGNED, wlasciciel INT, PRIMARY KEY(adres_budynku, naat line 1
+mysql> CREATE TABLE izba(adres_budynku VARCHAR(40), nazwa_izby VARCHAR(40), metraz UNSIGNED, wlasciciel INT, PRIMARY KEY(adres_budynku, nazwa_izby), FOREIGN KEY(wlasciciel) REFERENCES postac(id_postaci));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNSIGNED, wlasciciel INT, PRIMARY KEY(adres_budynku, naat line 1
+mysql> CREATE TABLE izba(adres_budynku VARCHAR(40), nazwa_izby VARCHAR(40), metraz UNSIGNED, wlasciciel INT, PRIMARY KEY(adres_budynku, nazwa_izby), FOREIGN KEY(wlasciciel) REFERENCES postac(id_postaci));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNSIGNED, wlasciciel INT, PRIMARY KEY(adres_budynku, naat line 1
+mysql> CREATE TABLE izba(adres_budynku VARCHAR(40), nazwa_izby VARCHAR(40), metraz UNSIGNED, wlasciciel INT, PRIMARY KEY(adres_budynku, nazwa_izby), FOREIGN KEY(wlasciciel) REFERENCES postac(id_postaci));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNSIGNED, wlasciciel INT, PRIMARY KEY(adres_budynku, naat line 1
+mysql> CREATE TABLE izba(adres_budynku varchar(40), nazwa_izby varchar(40), metraz INT  UNSIGNED, wlasciciel INT, PRIMARY KEY(adres_budynku, nazwa_izby), FOREIGN KEY(wlasciciel) REFERENCES postac(id_postaci));
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> ALTER TABLE izba ADD COLUMN kolor(new) ENUM ("czarny", "czerwony") AFTER metraz;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(new) ENUM ("czarny", "czerwony") AFTER metraz' at line
+mysql> ALTER TABLE izba ADD COLUMN kolor ENUM ("czarny", "czerwony") AFTER metraz;
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE izba ALTER COLUMN kolor SET DEFAULT 'czarny';
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO izba^C
+mysql>  VALUES(1, "40", "rozowy", "1"), (2, "60", "rozowy", "3");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(1, "40", "rozowy", "1"), (2, "60", "rozowy", "3")' at
+mysql>  VALUES(1, "40", "rozowy", "1"), (2, "60", "rozowy", "3");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(1, "40", "rozowy", "1"), (2, "60", "rozowy", "3")' at
+mysql> INSERT INTO izba VALUES("1", "spizarnia", "10", "3")
+    -> INSERT INTO izba VALUES("1", "spizarnia", "10", "3")
+    ->
+[5]+  Stopped                 mysql -u markowskip -p
+markowskip@bad2:~$ mysql -u markowskip  -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 2758
+Server version: 8.0.22 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> INSERT INTO izba VALUES("1", "spizarnia", "10", "3")
+    ->
+[6]+  Stopped                 mysql -u markowskip -p
+markowskip@bad2:~$ CREATE TABLE postac (id_postaci int PRIMARY KEY AUTO INCREMENT, nazwa varchar(40), rodzaj enum, data_ur date, wiek tinyint)
+-bash: syntax error near unexpected token `('
+markowskip@bad2:~$ mysql -u markowskip  -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 2759
+Server version: 8.0.22 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use markowskip
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> INSERT INTO izba VALUES("1", "spizarnia", "10", "3")
+    ->  INSERT INTO izba VALUES("1", "spizarnia", "10", "3");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO izba VALUES("1", "spizarnia", "10", "3")' a
+mysql> INSERT INTO izba VALUES("1", "spizarnia", "10", "3");
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> INSERT INTO izba VALUES("1", "spizarnia", "10", "3", "czarny" );
+ERROR 1265 (01000): Data truncated for column 'kolor' at row 1
+mysql> INSERT INTO izba VALUES("1", "spizarnia", "10", "3", "czarny");
+ERROR 1265 (01000): Data truncated for column 'kolor' at row 1
+mysql> INSERT INTO izba VALUES("1", "spizarnia", 40, "czarny" , 3);
+Query OK, 1 row affected (0.01 sec)
