@@ -1,0 +1,153 @@
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> DESCRIBE postaci;
+ERROR 1046 (3D000): No database selected
+mysql> use markowskip
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> DESCRIBE postaci;
+ERROR 1146 (42S02): Table 'markowskip.postaci' doesn't exist
+mysql> DESCRIBE przetwory;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| id_przetworu  | int         | NO   | PRI | NULL    |       |
+| rok_produkcji | year        | YES  |     | NULL    |       |
+| id_wykonawcy  | int         | YES  | MUL | NULL    |       |
+| zawartosc     | varchar(30) | YES  |     | NULL    |       |
+| dodatek       | varchar(30) | YES  |     | chili   |       |
+| id_konsumenta | int         | YES  | MUL | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> DESCRIBE postac;
++------------+---------------------------------+------+-----+---------+----------------+
+| Field      | Type                            | Null | Key | Default | Extra          |
++------------+---------------------------------+------+-----+---------+----------------+
+| id_postaci | int                             | NO   | PRI | NULL    | auto_increment |
+| nazwa      | varchar(40)                     | YES  |     | NULL    |                |
+| rodzaj     | enum('wiking','ptak','kobieta') | YES  |     | NULL    |                |
+| data_ur    | date                            | YES  |     | NULL    |                |
+| wiek       | tinyint                         | YES  |     | NULL    |                |
++------------+---------------------------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> DESCRIBE walizka;
++----------------+---------------------------------------------+------+-----+---------+----------------+
+| Field          | Type                                        | Null | Key | Default | Extra          |
++----------------+---------------------------------------------+------+-----+---------+----------------+
+| id_walizki     | int                                         | NO   | PRI | NULL    | auto_increment |
+| pojemnosc      | int unsigned                                | YES  |     | NULL    |                |
+| kolor          | enum('rozowy','czerwony','teczowy','zolty') | YES  |     | rozowy  |                |
+| id_wlasciciela | int                                         | YES  | MUL | NULL    |                |
++----------------+---------------------------------------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> CREATE TABLE statek ( nazwa_statku INT PRIMARY KEY, rodzaj_statku ENUM, data_wodowania DATE, max_ladownosc UNSIGNED );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', data_wodowania DATE, max_ladownosc UNSIGNED )' at line 1
+mysql> CREATE TABLE statek ( nazwa_statku INT PRIMARY KEY)
+    ->
+[5]+  Stopped                 mysql -u markowskip -p
+markowskip@bad2:~$ mysql -u markowskip  -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 4727
+Server version: 8.0.22 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use markowskip
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> use markowskip
+Database changed
+mysql> CREATE TABLE statek (nazwa_statku VARCHAR(30) PRIMARY KEY);
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> ALTER TABLE statek ADD rodzaj statku ENUM;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'statku ENUM' at line 1
+mysql> ALTER TABLE statek ADD rodzaj_statku ENUM;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> ALTER TABLE statek ADD rodzaj_statku INT;
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE statek ADD data_wodowania DATE;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE statek ADD max_ladownosc UNSIGNED;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNSIGNED' at line 1
+mysql> ALTER TABLE statek ADD max_ladownosc UNSIGNED;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNSIGNED' at line 1
+mysql> ALTER TABLE statek ADD max_ladownosc INT  UNSIGNED;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO postac VALUES (4, wiking2, wiking, 1640-01-08)
+    ->
+[6]+  Stopped                 mysql -u markowskip -p
+markowskip@bad2:~$ USE markowskip;
+-bash: USE: command not found
+markowskip@bad2:~$ mysql -u markowskip  -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 4739
+Server version: 8.0.22 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> VALUES (4, wiking2, wiking, 1640-01-08);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(4, wiking2, wiking, 1640-01-08)' at line 1
+mysql> VALUES ('4', 'wiking2', 'wiking', '1640-01-08' );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '('4', 'wiking2', 'wiking', '1640-01-08' )' at line 1
+mysql> VALUES ('4', 'wiking2', 'wiking', '1640-01-08', '45' );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '('4', 'wiking2', 'wiking', '1640-01-08', '45' )' at line 1
+mysql> VALUES (4, wiking2, wiking, 1640-01-08, 45);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(4, wiking2, wiking, 1640-01-08, 45)' at line 1
+mysql> VALUES ('4', 'wiking2', 'wiking', '1640-01-08', '45' );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '('4', 'wiking2', 'wiking', '1640-01-08', '45' )' at line 1
+mysql> VALUES ('4', 'wiking2', 'wiking', '1640-01-08', '45' );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '('4', 'wiking2', 'wiking', '1640-01-08', '45' )' at line 1
+mysql> INSERT INTO postac VALUES (4, wiking2, wiking, 1640-01-08, 45);
+ERROR 1046 (3D000): No database selected
+mysql> use markowskip
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> INSERT INTO postac VALUES (4, wiking2, wiking, 1640-01-08, 45);
+ERROR 1054 (42S22): Unknown column 'wiking2' in 'field list'
+mysql> VALUES ('4', 'wiking2', 'wiking', '1640-01-08', '45' );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '('4', 'wiking2', 'wiking', '1640-01-08', '45' )' at line 1
+mysql> INSERT INTO postac VALUES (4, wiking2, wiking, 1640-01-08, 45);
+ERROR 1054 (42S22): Unknown column 'wiking2' in 'field list'
+mysql> INSERT INTO postac VALUES (4, wiking2, wiking, 1640-01-08, 45);
+ERROR 1054 (42S22): Unknown column 'wiking2' in 'field list'
+mysql> INSERT INTO postac VALUES (4, wikingdrugi, wiking, 1640-01-08, 45);
+ERROR 1054 (42S22): Unknown column 'wikingdrugi' in 'field list'
+mysql> INSERT INTO postac VALUES (4, wiking2, wiking, 1640-01-08, 45);
+ERROR 1054 (42S22): Unknown column 'wiking2' in 'field list'
+mysql> INSERT INTO postac VALUES (4, wiking2, wiking, 1640-01-08, 45);
+ERROR 1054 (42S22): Unknown column 'wiking2' in 'field list'
