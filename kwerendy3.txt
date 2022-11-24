@@ -9,5 +9,8 @@
 9.SELECT * FROM zasob ORDER BY waga ASC;
 10.SELECT TOP 5 * FROM kreatura ORDER BY dataur;
 11.SELECT DISTINCT rodzaj FROM zasob;
-12.SELECT nazwa, rodzaj FROM kreatura LIKE 'wi%';
-13.SELECT 
+12.SELECT nazwa, rodzaj FROM kreatura WHERE nazwa LIKE 'wi%';
+13.SELECT * FROM zasob WHERE (ilosc * waga) AND YEAR(datapozyskania) BETWEEN 2001 AND 2007;\
+14.SELECT (masa * 0.7), (waga * 0.3) FROM zasoby;
+15.SELECT * FROM ZASOBY WHERE rodzaj NULL; 
+16.SELECT DISTINCT rodzaj FROM zasob WHERE nazwa LIKE 'ba%' AND '%os'; 
