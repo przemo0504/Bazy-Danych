@@ -1,0 +1,4 @@
+1.SELECT AVG(waga) FROM postac WHERE rodzaj = 'wiking';
+2.SELECT AVG(waga, liczba) FROM kreatura GROUP BY rodzaj;
+3.SELECT AVG YEAR FROM kreatura;
+4.SELECT SUM(waga) FROM postac GROUP BY rodzaj;
