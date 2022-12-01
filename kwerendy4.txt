@@ -2,3 +2,6 @@
 2.SELECT AVG(waga, liczba) FROM kreatura GROUP BY rodzaj;
 3.SELECT AVG YEAR FROM kreatura;
 4.SELECT SUM(waga) FROM postac GROUP BY rodzaj;
+5.SELECT ASC(waga) FROM zasob GROUP BY nazwa HAVING liczba >= 4 AND (ilosc*waga) > 10;
+6.SELECT nazwa FROM zasob GROUP BY rodzaj HAVING liczba > 1;
+7
